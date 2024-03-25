@@ -86,14 +86,9 @@ export default {
   data() {
     return {
       postList: [],
-      searchInput: "",
-      medium_id: "",
       mediumOptions: [],
-      category_id: "",
       categoryOptions: [],
-      time_period: "",
       timePeriodOptions: [],
-      sort: "",
       sortOptions: [],
       searchParams:{
         medium_id: "",
@@ -114,9 +109,6 @@ export default {
     }
   },
   methods: {
-    search() {
-      // 调用 API 搜索图片
-    },
     showCommentInput(index) {
       this.postList[index].showCommentInput = true;
       this.$nextTick(() => {

@@ -80,6 +80,12 @@
   </div>
 </template>
 <script>
+/**
+ * listPost 例子列表，是某命名规范。所有操作都刷新，是为了演示场景。操作后速度慢，请耐心等待。
+ * commentPost 评论帖子，
+ * likePost 点赞帖子
+ * getSystemOptions 统一管理系统配置的选项属性
+ */
 import {listPost, commentPost, likePost,getCategoryOptions,getMediumOptions,getSystemOptions} from '@/api';
 
 export default {
@@ -97,10 +103,11 @@ export default {
         time_period: "",
         sort: "",
       },
-      commentInputRefs: [],
+      commentInputRefs: [],// 评论输入框的refs
     };
   },
   watch: {
+    // 监听5个搜索参数的变化，重新加载数据
     searchParams: {
       handler() {
         this.loadPostList();
